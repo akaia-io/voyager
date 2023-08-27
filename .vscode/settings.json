@@ -30,23 +30,8 @@
 		"editor.defaultFormatter": "vscode.html-language-features",
 	},
 	"cSpell.words": [
-		"borsh",
-		"cardnum",
-		"cardopen",
-		"cryptonian",
-		"duelz",
-		"ets-launcher",
-		"etsnext",
-		"etsplayer",
-		"Flashstep",
-		"Imba",
-		"Leaderboard",
-		"lukeed",
-		"metaverse",
-		"missionsv",
 		"nearfi",
-		"preconfigured",
-		"pressable",
-		"uuidv"
+		"pnpx",
+		"unocss"
 	]
 }
