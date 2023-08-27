@@ -30,8 +30,10 @@
 		"editor.defaultFormatter": "vscode.html-language-features",
 	},
 	"cSpell.words": [
+		"Attributify",
 		"nearfi",
 		"pnpx",
-		"unocss"
+		"unocss",
+		"wendersonpires"
 	]
 }

@@ -6,9 +6,9 @@ overrideLocalStorage()
 
 export const Voyager = () => (
 	<NearSocialBridgeProvider waitForStorage fallback={<Spinner />}>
-		<div>
+		<div un-text="white">
 			<a href={"/#"}>
-				<img class="logo preact" alt="Preact logo" />
+				<img class="logo preact" alt="Test?" />
 			</a>
 		</div>
 	</NearSocialBridgeProvider>

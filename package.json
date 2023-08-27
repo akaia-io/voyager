@@ -5,9 +5,9 @@
 	"type": "module",
 	"scripts": {
 		"start:dev-server": "vite --host",
-		"start:viewer": "init-viewer ./src",
-		"preview": "concurrently 'pnpm start:viewer' 'pnpm start:dev-server'",
-		"build:app": "tsc && vite build"
+		"start:viewer": "init-viewer ./src/target/bos",
+		"preview": "pnpm i && concurrently 'pnpm start:viewer' 'pnpm start:dev-server'",
+		"build:app": "vite build"
 	},
 	"dependencies": {
 		"near-api-js": "^2.1.4",
@@ -16,11 +16,13 @@
 	},
 	"devDependencies": {
 		"@preact/preset-vite": "^2.5.0",
+		"@unocss/preset-attributify": "^0.55.3",
 		"concurrently": "^8.2.1",
 		"near-social-local-viewer": "^2.1.3",
 		"rome": "^12.1.3",
 		"typescript": "^5.0.2",
 		"unocss": "^0.55.0",
+		"unocss-preset-theme": "^0.9.1",
 		"vite": "^4.4.5"
 	}
 }
