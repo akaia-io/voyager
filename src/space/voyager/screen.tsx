@@ -1,3 +1,3 @@
-import { RootScreen } from "./screen/root"
+import { MainScreen } from "./screen/main"
 
-export const Screen = () => <RootScreen />
+export const Screen = () => <MainScreen />
