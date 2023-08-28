@@ -1,7 +1,7 @@
 export const Voyager = () => (
-	<div un-bg-black>
-		<a un-text="black" href={"/#"}>
-			Test?
-		</a>
+	<div flex="~" gap="4" p="4" h="full" w="full">
+		<aside p="4">
+			<ul></ul>
+		</aside>
 	</div>
 )

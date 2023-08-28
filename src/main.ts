@@ -20,6 +20,7 @@ render(
 	h(
 		NearSocialBridgeProvider as FunctionComponent<PatchedNearSocialBridgeProps>,
 		{ waitForStorage: true, fallback: h(Spinner, null) },
+		h("style", null, "html, body, #app { width: 100%; height: 100% }"),
 		h(Voyager, {}),
 	),
 
