@@ -7,7 +7,7 @@ import { FunctionComponent, VNode, createElement as h, render } from "preact"
 import "virtual:uno.css"
 
 import { NearSocialBridgeProps } from "near-social-bridge/bridge/types"
-import { Voyager } from "./app.tsx"
+import { Screen } from "./screen.tsx"
 
 overrideLocalStorage()
 
@@ -21,7 +21,7 @@ render(
 		NearSocialBridgeProvider as FunctionComponent<PatchedNearSocialBridgeProps>,
 		{ waitForStorage: true, fallback: h(Spinner, null) },
 		h("style", null, "html, body, #app { width: 100%; height: 100% }"),
-		h(Voyager, {}),
+		h(Screen, {}),
 	),
 
 	document.getElementById("app")!,
