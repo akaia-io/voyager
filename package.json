@@ -5,12 +5,13 @@
 	"type": "module",
 	"scripts": {
 		"start:dev-server": "pnpm i && vite --host",
-		"start:viewer": "pnpm i && init-viewer ./src/target/bos",
+		"start:viewer": "pnpm i && init-viewer ./src/target/bos-web-engine",
 		"preview": "concurrently 'pnpm start:viewer' 'pnpm start:dev-server'",
 		"build:app": "vite build"
 	},
 	"dependencies": {
 		"@preact/signals": "^1.2.1",
+		"@unocss/reset": "^0.55.3",
 		"near-social-bridge": "^1.5.0",
 		"preact": "^10.16.0"
 	},

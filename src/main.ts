@@ -1,12 +1,13 @@
+import "@unocss/reset/normalize.css"
+import "@unocss/reset/sanitize/assets.css"
+import "@unocss/reset/sanitize/sanitize.css"
 import { NearSocialBridgeProvider, Spinner, overrideLocalStorage } from "near-social-bridge"
 import "near-social-bridge/near-social-bridge.css"
-import { FunctionComponent, VNode, render } from "preact"
-import { createElement as h } from "preact/compat"
+import { FunctionComponent, VNode, createElement as h, render } from "preact"
 import "virtual:uno.css"
 
 import { NearSocialBridgeProps } from "near-social-bridge/bridge/types"
 import { Voyager } from "./app.tsx"
-import "./main.css"
 
 overrideLocalStorage()
 
