@@ -1,7 +1,7 @@
 import "./app.css"
 
 export const Voyager = () => (
-	<div>
+	<div un-bg-black>
 		<a un-text="white" href={"/#"}>
 			Test?
 		</a>

@@ -1,16 +1,19 @@
-import { presetAttributify, presetUno } from "unocss"
+import presetAttributify from "@unocss/preset-attributify"
+import { presetUno } from "unocss"
 import presetTheme from "unocss-preset-theme"
 import type { Theme } from "unocss/preset-uno"
-import Unocss from "unocss/vite"
+import Unocss, { defineConfig } from "unocss/vite"
 
-Unocss<Theme>({
-	// Configure light themes
+export default defineConfig({
+	// Light themes
 	theme: {},
 
 	presets: [
-		presetAttributify({ prefix: "un-", prefixedOnly: true }),
 		presetUno(),
+		/* @ts-ignore */
+		presetAttributify(),
 
+		/* @ts-ignore-next-line */
 		presetTheme<Theme>({
 			theme: {
 				dark: {},

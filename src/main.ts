@@ -11,7 +11,7 @@ import "./main.css"
 overrideLocalStorage()
 
 interface PatchedNearSocialBridgeProps extends Partial<NearSocialBridgeProps> {
-	fallback: VNode<null>
+	fallback?: VNode<null>
 	waitForStorage: boolean
 }
 
