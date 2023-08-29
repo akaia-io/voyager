@@ -5,6 +5,12 @@ settings:
   excludeLinksFromLockfile: false
 
 dependencies:
+  '@iconify-json/cil':
+    specifier: ^1.1.5
+    version: 1.1.5
+  '@iconify-json/svg-spinners':
+    specifier: ^1.1.2
+    version: 1.1.2
   '@preact/signals':
     specifier: ^1.2.1
     version: 1.2.1(preact@10.16.0)
@@ -19,10 +25,16 @@ dependencies:
     version: 10.16.0
 
 devDependencies:
+  '@iconify/types':
+    specifier: ^2.0.0
+    version: 2.0.0
   '@preact/preset-vite':
     specifier: ^2.5.0
     version: 2.5.0(@babel/core@7.22.11)(preact@10.16.0)(vite@4.4.5)
   '@unocss/preset-attributify':
+    specifier: ^0.55.3
+    version: 0.55.3
+  '@unocss/preset-icons':
     specifier: ^0.55.3
     version: 0.55.3
   concurrently:
@@ -889,9 +901,20 @@ packages:
       uuid4: 2.0.3
     dev: true
 
+  /@iconify-json/cil@1.1.5:
+    resolution: {integrity: sha512-vyeEU3EIVGA43zOI0o/hwYaFFkWlzn8l1bbuPpxzZyGfizAIJdJA4I9+zm4zWRWzqj5WPusilX9wAxKTBwlazA==}
+    dependencies:
+      '@iconify/types': 2.0.0
+    dev: false
+
+  /@iconify-json/svg-spinners@1.1.2:
+    resolution: {integrity: sha512-Aab6SqkORaTJ1W+ooufn6C8BsBitrn3uk8iRQLPA6pjhyvQAhkKCGMctyXIL5ZjrycnoFVsZ4mx7KnwEMra8qg==}
+    dependencies:
+      '@iconify/types': 2.0.0
+    dev: false
+
   /@iconify/types@2.0.0:
     resolution: {integrity: sha512-+wluvCrRhXrhyOmRDJ3q8mux9JkKy5SJ/v8ol2tu4FVjyYvtEzkc/3pK15ET6RKg4b4w4BmTk1+gsCUhf21Ykg==}
-    dev: true
 
   /@iconify/utils@2.1.9:
     resolution: {integrity: sha512-mo+A4n3MwLlWlg1SoSO+Dt6pOPWKElk9sSJ6ZpuzbB9OcjxN8RUWxU3ulPwB1nglErWKRam2x4BAohbYF7FiFA==}
@@ -2662,6 +2685,16 @@ packages:
     dependencies:
       '@iconify/utils': 2.1.9
       '@unocss/core': 0.55.0
+      ofetch: 1.3.3
+    transitivePeerDependencies:
+      - supports-color
+    dev: true
+
+  /@unocss/preset-icons@0.55.3:
+    resolution: {integrity: sha512-UVpzkvO1ghNBNRMGylgYE73ufRFdU1l3pY11ePV8a/80HWFKL3QNq4Hoqa00M5CEnxBZT8dECTuj+f+l3Pn5wg==}
+    dependencies:
+      '@iconify/utils': 2.1.9
+      '@unocss/core': 0.55.3
       ofetch: 1.3.3
     transitivePeerDependencies:
       - supports-color

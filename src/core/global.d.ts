@@ -1,5 +1,5 @@
 import type { AttributifyAttributes } from "@unocss/preset-attributify"
-import { HTMLAttributes as StandardHTMLAttributes } from "preact/compat"
+import { HTMLAttributes as StandardHTMLAttributes } from "preact"
 
 declare module "preact" {
 	namespace JSX {
