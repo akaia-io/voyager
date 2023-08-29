@@ -8,6 +8,9 @@ dependencies:
   '@iconify-json/cil':
     specifier: ^1.1.5
     version: 1.1.5
+  '@iconify-json/openmoji':
+    specifier: ^1.1.30
+    version: 1.1.30
   '@iconify-json/svg-spinners':
     specifier: ^1.1.2
     version: 1.1.2
@@ -23,6 +26,9 @@ dependencies:
   preact:
     specifier: ^10.16.0
     version: 10.16.0
+  zod:
+    specifier: ^3.22.2
+    version: 3.22.2
 
 devDependencies:
   '@iconify/types':
@@ -31,6 +37,9 @@ devDependencies:
   '@preact/preset-vite':
     specifier: ^2.5.0
     version: 2.5.0(@babel/core@7.22.11)(preact@10.16.0)(vite@4.4.5)
+  '@types/node':
+    specifier: ^20.5.7
+    version: 20.5.7
   '@unocss/preset-attributify':
     specifier: ^0.55.3
     version: 0.55.3
@@ -57,7 +66,10 @@ devDependencies:
     version: 0.9.1(@unocss/core@0.55.3)
   vite:
     specifier: ^4.4.5
-    version: 4.4.5
+    version: 4.4.5(@types/node@20.5.7)
+  vite-plugin-static-copy:
+    specifier: ^0.17.0
+    version: 0.17.0(vite@4.4.5)
 
 packages:
 
@@ -907,6 +919,12 @@ packages:
       '@iconify/types': 2.0.0
     dev: false
 
+  /@iconify-json/openmoji@1.1.30:
+    resolution: {integrity: sha512-hkx1D69P8YrfsDOGaL0lEoEnJwujlVeB2UUYBPiMS4ACskcpg7wVDkxlXWHykIyU5rZkIXGF34GUPtaC/U0vuA==}
+    dependencies:
+      '@iconify/types': 2.0.0
+    dev: false
+
   /@iconify-json/svg-spinners@1.1.2:
     resolution: {integrity: sha512-Aab6SqkORaTJ1W+ooufn6C8BsBitrn3uk8iRQLPA6pjhyvQAhkKCGMctyXIL5ZjrycnoFVsZ4mx7KnwEMra8qg==}
     dependencies:
@@ -1142,7 +1160,7 @@ packages:
       debug: 4.3.4(supports-color@5.5.0)
       kolorist: 1.8.0
       resolve: 1.22.4
-      vite: 4.4.5
+      vite: 4.4.5(@types/node@20.5.7)
     transitivePeerDependencies:
       - preact
       - supports-color
@@ -1189,7 +1207,7 @@ packages:
       '@prefresh/utils': 1.2.0
       '@rollup/pluginutils': 4.2.1
       preact: 10.16.0
-      vite: 4.4.5
+      vite: 4.4.5(@types/node@20.5.7)
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -2547,6 +2565,10 @@ packages:
     resolution: {integrity: sha512-Exw4yUWMBXM3X+8oqzJNRqZSwUAaS4+7NdvHqQuFi/d+synz++xmX3QIf+BFqneW8N31R8Ky+sikfZUXq07ggQ==}
     dev: true
 
+  /@types/node@20.5.7:
+    resolution: {integrity: sha512-dP7f3LdZIysZnmvP3ANJYTSwg+wLLl8p7RqniVlV7j+oXSXAbt9h0WIBFmJy5inWZoX9wZN6eXx+YXd9Rh3RBA==}
+    dev: true
+
   /@types/prop-types@15.7.5:
     resolution: {integrity: sha512-JCB8C6SnDoQf0cNycqd/35A7MjcnK+ZTqE7judS6o7utxUCg6imJg3QK2qzHKszlTjcj2cn+NwMB2i96ubpj7w==}
     dev: true
@@ -2588,7 +2610,7 @@ packages:
       '@unocss/core': 0.55.0
       '@unocss/reset': 0.55.0
       '@unocss/vite': 0.55.0(vite@4.4.5)
-      vite: 4.4.5
+      vite: 4.4.5(@types/node@20.5.7)
     transitivePeerDependencies:
       - rollup
     dev: true
@@ -2807,7 +2829,7 @@ packages:
       chokidar: 3.5.3
       fast-glob: 3.3.1
       magic-string: 0.30.3
-      vite: 4.4.5
+      vite: 4.4.5(@types/node@20.5.7)
     transitivePeerDependencies:
       - rollup
     dev: true
@@ -3904,6 +3926,15 @@ packages:
     engines: {node: '>= 0.6'}
     dev: true
 
+  /fs-extra@11.1.1:
+    resolution: {integrity: sha512-MGIE4HOvQCeUCzmlHs0vXpih4ysz4wg9qiSAu6cd42lVwPbTM1TjV7RusoyQqMmk/95gdQZX72u+YW+c3eEpFQ==}
+    engines: {node: '>=14.14'}
+    dependencies:
+      graceful-fs: 4.2.11
+      jsonfile: 6.1.0
+      universalify: 2.0.0
+    dev: true
+
   /fs.realpath@1.0.0:
     resolution: {integrity: sha512-OO0pH2lK6a0hZnAdau5ItzHPI6pUlvI7jMVnxUQRtw4owF2wk8lOSabtGDCTP4Ggrg2MbGnWO9X8K1t4+fGMDw==}
     dev: true
@@ -3980,6 +4011,10 @@ packages:
     resolution: {integrity: sha512-d65bNlIadxvpb/A2abVdlqKqV563juRnZ1Wtk6s1sIR8uNsXR70xqIzVqxVf1eTqDunwT2MkczEeaezCKTZhwA==}
     dependencies:
       get-intrinsic: 1.2.1
+    dev: true
+
+  /graceful-fs@4.2.11:
+    resolution: {integrity: sha512-RbJ5/jmFcNNCcDV5o9eTnBLJ/HszWV0P73bc+Ff4nS/rJj+YaS6IGyiOL0VoBYX+l1Wrl3k63h/KrH+nhJ0XvQ==}
     dev: true
 
   /gzip-size@6.0.0:
@@ -4442,6 +4477,14 @@ packages:
 
   /jsonc-parser@3.2.0:
     resolution: {integrity: sha512-gfFQZrcTc8CnKXp6Y4/CBT3fTc0OVuDofpre4aEeEpSBPV5X5v4+Vmx+8snU7RLPrNHPKSgLxGo9YuQzz20o+w==}
+    dev: true
+
+  /jsonfile@6.1.0:
+    resolution: {integrity: sha512-5dgndWOriYSm5cnYaJNhalLNDKOqFwyDB/rr1E9ZsGciGvKPs8R2xYGCacuf3z6K1YKDz182fd+fY3cn3pMqXQ==}
+    dependencies:
+      universalify: 2.0.0
+    optionalDependencies:
+      graceful-fs: 4.2.11
     dev: true
 
   /kleur@4.1.5:
@@ -6553,6 +6596,11 @@ packages:
       unist-util-visit-parents: 5.1.3
     dev: true
 
+  /universalify@2.0.0:
+    resolution: {integrity: sha512-hAZsKq7Yy11Zu1DE0OzWjw7nnLZmJZYTDZZyEFHZdUhV8FkH5MCfoU1XMaxXovpyW5nq5scPqq0ZDP9Zyl04oQ==}
+    engines: {node: '>= 10.0.0'}
+    dev: true
+
   /unocss-preset-theme@0.9.1(@unocss/core@0.55.3):
     resolution: {integrity: sha512-QykLqjG5peIABYlWKL5K+Z1759NvjaXnkBO9nKX/E5lMtre0S8KIgP28Nhc4+ehzuZekEJNdhfRS0nzBxajS2Q==}
     peerDependencies:
@@ -6594,7 +6642,7 @@ packages:
       '@unocss/transformer-directives': 0.55.0
       '@unocss/transformer-variant-group': 0.55.0
       '@unocss/vite': 0.55.0(vite@4.4.5)
-      vite: 4.4.5
+      vite: 4.4.5(@types/node@20.5.7)
     transitivePeerDependencies:
       - postcss
       - rollup
@@ -6710,7 +6758,20 @@ packages:
       vfile-message: 3.1.4
     dev: true
 
-  /vite@4.4.5:
+  /vite-plugin-static-copy@0.17.0(vite@4.4.5):
+    resolution: {integrity: sha512-2HpNbHfDt8SDy393AGXh9llHkc8FJMQkI8s3T5WsH3SWLMO+f5cFIyPErl4yGKU9Uh3Vaqsd4lHZYTf042fQ2A==}
+    engines: {node: ^14.18.0 || >=16.0.0}
+    peerDependencies:
+      vite: ^3.0.0 || ^4.0.0
+    dependencies:
+      chokidar: 3.5.3
+      fast-glob: 3.3.1
+      fs-extra: 11.1.1
+      picocolors: 1.0.0
+      vite: 4.4.5(@types/node@20.5.7)
+    dev: true
+
+  /vite@4.4.5(@types/node@20.5.7):
     resolution: {integrity: sha512-4m5kEtAWHYr0O1Fu7rZp64CfO1PsRGZlD3TAB32UmQlpd7qg15VF7ROqGN5CyqN7HFuwr7ICNM2+fDWRqFEKaA==}
     engines: {node: ^14.18.0 || >=16.0.0}
     hasBin: true
@@ -6738,6 +6799,7 @@ packages:
       terser:
         optional: true
     dependencies:
+      '@types/node': 20.5.7
       esbuild: 0.18.20
       postcss: 8.4.28
       rollup: 3.28.1
@@ -6924,6 +6986,10 @@ packages:
     resolution: {integrity: sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==}
     engines: {node: '>=10'}
     dev: true
+
+  /zod@3.22.2:
+    resolution: {integrity: sha512-wvWkphh5WQsJbVk1tbx1l1Ly4yg+XecD+Mq280uBGt9wa5BKSWf4Mhp6GmrkPixhMxmabYY7RbzlwVP32pbGCg==}
+    dev: false
 
   /zwitch@2.0.4:
     resolution: {integrity: sha512-bXE4cR/kVZhKZX/RjPEflHaKVhUVl85noU3v6b8apfQEc1x4A+zBxjZ4lN8LqGd6WZ3dl98pY4o717VFmoPp+A==}

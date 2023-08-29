@@ -4,22 +4,25 @@
 	"version": "0.0.1",
 	"type": "module",
 	"scripts": {
-		"start:dev-server": "pnpm i && vite --host",
-		"start:viewer": "pnpm i && init-viewer ./src/target/bos-web-engine",
-		"preview": "concurrently 'pnpm start:viewer' 'pnpm start:dev-server'",
+		"start:dev-server": "vite --host",
+		"start:viewer": " init-viewer ./src/target/bos-web-engine",
+		"preview": "pnpm i && concurrently 'pnpm start:viewer' 'pnpm start:dev-server'",
 		"build:app": "vite build"
 	},
 	"dependencies": {
 		"@iconify-json/cil": "^1.1.5",
+		"@iconify-json/openmoji": "^1.1.30",
 		"@iconify-json/svg-spinners": "^1.1.2",
 		"@preact/signals": "^1.2.1",
 		"@unocss/reset": "^0.55.3",
 		"near-social-bridge": "^1.5.0",
-		"preact": "^10.16.0"
+		"preact": "^10.16.0",
+		"zod": "^3.22.2"
 	},
 	"devDependencies": {
 		"@iconify/types": "^2.0.0",
 		"@preact/preset-vite": "^2.5.0",
+		"@types/node": "^20.5.7",
 		"@unocss/preset-attributify": "^0.55.3",
 		"@unocss/preset-icons": "^0.55.3",
 		"concurrently": "^8.2.1",
@@ -28,7 +31,8 @@
 		"typescript": "^5.0.2",
 		"unocss": "^0.55.0",
 		"unocss-preset-theme": "^0.9.1",
-		"vite": "^4.4.5"
+		"vite": "^4.4.5",
+		"vite-plugin-static-copy": "^0.17.0"
 	},
 	"pnpm": {
 		"peerDependencyRules": {

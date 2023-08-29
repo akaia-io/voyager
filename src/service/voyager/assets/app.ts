@@ -7,7 +7,7 @@ import { FunctionComponent, VNode, h, render } from "preact"
 import "virtual:uno.css"
 
 import { NearSocialBridgeProps } from "near-social-bridge/bridge/types"
-import { Screen } from "./screen.ts"
+import { EverythingNavigator } from "../../../navigator/everything/mod.ts"
 
 interface PatchedNearSocialBridgeProps extends Partial<NearSocialBridgeProps> {
 	fallback?: VNode<null>
@@ -21,7 +21,7 @@ render(
 		NearSocialBridgeProvider as FunctionComponent<PatchedNearSocialBridgeProps>,
 		{ waitForStorage: true, fallback: h(Spinner, null) },
 		h("style", null, "html, body { width: 100%; height: 100% };"),
-		h(Screen, {}),
+		h(EverythingNavigator, {}),
 	),
 
 	document.body,
