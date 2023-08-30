@@ -63,13 +63,11 @@ const VoyagerBOSClient = ({
 	...otherProps
 }) => (
 	<div className="d-flex flex-wrap gap-4">
-		<div draggable onDrag={(event) => console.log(event)}>
-			{/* rome-ignore lint: Widget is provided in BOS FE API */}
-			<Widget
-				src={VoyagerBOSClientConfig.bridgeSrc}
-				props={{ path, requestHandler, ...VoyagerBOSClientConfig, ...otherProps }}
-			/>
-		</div>
+		{/* rome-ignore lint: Widget is provided in BOS FE API */}
+		<Widget
+			src={VoyagerBOSClientConfig.bridgeSrc}
+			props={{ path, requestHandler, ...VoyagerBOSClientConfig, ...otherProps }}
+		/>
 
 		{/* rome-ignore lint: Widget is provided in BOS FE API */}
 		<Widget
