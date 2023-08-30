@@ -7,6 +7,8 @@ import { viteStaticCopy } from "vite-plugin-static-copy"
 
 // https://vitejs.dev/config/
 export default defineConfig({
+	build: { outDir: "target/browser/voyager" },
+
 	plugins: [
 		viteStaticCopy({
 			targets: [
@@ -28,16 +30,14 @@ export default defineConfig({
 		chunkSplitPlugin({
 			strategy: "unbundle",
 
-			customChunk: ({ file: relPath, id, moduleId }) => {
+			customChunk: ({ file: relPath }) => {
 				if (/\.(ts|tsx|js|jsx)$/.test(relPath)) {
-					console.log({ relPath, id, moduleId })
-
 					return relPath.includes("node_modules")
 						? [".vendor", relPath.match(/node_modules\/(.*?)\/(.*?)@/).at(2)].join("/")
 						: relPath.replace(/src\//, "").replace(/\.(ts|tsx)$/, "")
+				} else {
+					return null
 				}
-
-				return null
 			},
 		}),
 	],
