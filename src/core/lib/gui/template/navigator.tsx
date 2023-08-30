@@ -1,5 +1,11 @@
 export const NavigatorTemplate = ({ ...props }) => {
-	const collectionsMock = [{ type: "collection", name: "Foxes", icon: "openmoji-fox" }]
+	const collectionsMock = [
+		{
+			type: "collection",
+			name: "Foxes",
+			icon: { metadata: { type: "react.element" }, data: <span un-i="openmoji-fox" /> },
+		},
+	]
 
 	return (
 		<div flex="col" w="full" h="full" {...props}>
@@ -8,7 +14,11 @@ export const NavigatorTemplate = ({ ...props }) => {
 					<ul w="full" h="full" p="0" m="0" list="none">
 						{collectionsMock.map(({ name, icon }) => (
 							<li flex="~" gap="2">
-								<span un-i={icon ?? "openmoji-black-hole"} />
+								{icon.metadata.type === "react.element" ? (
+									icon.data
+								) : (
+									<span un-i="openmoji-magnifying-glass-tilted-right" />
+								)}
 								<span>{name}</span>
 							</li>
 						))}
@@ -16,10 +26,25 @@ export const NavigatorTemplate = ({ ...props }) => {
 				</aside>
 
 				<section flex="~">
-					{[{ type: "image", name: "Fox 1", previewSrc: "" }].map(({ name, previewSrc }) => (
+					{[
+						{
+							type: "image",
+							name: "Dixie in the house",
+
+							previewSrc:
+								"https://ipfs.near.social/ipfs/bafkreibaz5jflynarfsxuka7kkme7sujmpz73rbzyqtnlb2elycssvjwgu",
+						},
+						{
+							type: "image",
+							name: "Christmas Finnegan",
+
+							previewSrc:
+								"https://ipfs.near.social/ipfs/bafkreidlqtqcdm74fyfzmzd4saxqgennuuinkxn3b5gu4wajjhn34mxiju",
+						},
+					].map(({ name, previewSrc }) => (
 						<a href="/#" un-decoration="none">
 							<figure>
-								<img src={previewSrc} alt={name} />
+								<img alt={`${name}'s avatar`} src={previewSrc} />
 								<figcaption>{name}</figcaption>
 							</figure>
 						</a>

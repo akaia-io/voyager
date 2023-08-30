@@ -5,9 +5,9 @@
 	"type": "module",
 	"scripts": {
 		"start:dev-server": "vite --host",
-		"start:viewer": " init-viewer ./src/target/bos-web-engine",
-		"preview": "pnpm i && concurrently 'pnpm start:viewer' 'pnpm start:dev-server'",
-		"build:app": "vite build"
+		"start:viewer": " init-viewer ./target/bos",
+		"build:app": "tsc && vite build",
+		"preview": "pnpm i && pnpm build:app && concurrently 'pnpm start:viewer' 'pnpm start:dev-server'"
 	},
 	"dependencies": {
 		"@iconify-json/cil": "^1.1.5",
@@ -32,6 +32,7 @@
 		"unocss": "^0.55.0",
 		"unocss-preset-theme": "^0.9.1",
 		"vite": "^4.4.5",
+		"vite-plugin-chunk-split": "^0.4.7",
 		"vite-plugin-static-copy": "^0.17.0"
 	},
 	"pnpm": {
