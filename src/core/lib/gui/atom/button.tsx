@@ -8,12 +8,20 @@ export interface ButtonProps extends JSX.HTMLAttributes {
 	variant?: "primary" | "outlined" | "text"
 }
 
-export const Button = ({ kind = "button", label, onClick, rootTag = "button" }: ButtonProps) =>
+export const Button = ({
+	kind = "button",
+	label,
+	onClick,
+	rootTag = "button",
+	...restProps
+}: ButtonProps) =>
 	h(
+		// @ts-ignore
 		rootTag,
 
 		{
 			onClick: kind === "button" ? onClick : () => void null,
+			...restProps,
 		},
 
 		label,
