@@ -7,7 +7,7 @@ import { FunctionComponent, VNode, h, render } from "preact"
 import "virtual:uno.css"
 
 import { NearSocialBridgeProps } from "near-social-bridge/bridge/types"
-import { EverythingNavigator } from "../../../navigator/everything/mod.ts"
+import { EverythingNavigator } from "../../../../navigator/everything/mod.ts"
 
 interface PatchedNearSocialBridgeProps extends Partial<NearSocialBridgeProps> {
 	fallback?: VNode<null>

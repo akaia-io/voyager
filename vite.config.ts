@@ -7,7 +7,7 @@ import { viteStaticCopy } from "vite-plugin-static-copy"
 
 // https://vitejs.dev/config/
 export default defineConfig({
-	build: { outDir: "target/browser/voyager", assetsDir: "" },
+	build: { outDir: "target/web/voyager", assetsDir: "" },
 
 	plugins: [
 		viteStaticCopy({

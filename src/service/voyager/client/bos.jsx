@@ -23,7 +23,7 @@ const getAccountIdHandler = (request, response) => {
 	// You have access to the request payload
 	console.log(request.payload) // Any data sent by the External App
 
-	/* rome-ignore lint: `context` is provided in BOS FE API */
+	/* rome-ignore lint: `context` is provided by BOS FE API */
 	const { accountId } = context
 
 	// Send a response to the External App (React App)
@@ -57,24 +57,29 @@ const requestHandler = (request, response, Utils) => {
 	}
 }
 
+/* rome-ignore lint: `styled` is provided by BOS FE API */
+const WindowsArea = styled.div`
+	& > div {}
+`
+
 const VoyagerBOSClient = ({
 	/** Initial Path (optional) */
 	path,
 	...otherProps
 }) => (
-	<div className="d-flex flex-wrap gap-4">
-		{/* rome-ignore lint: Widget is provided in BOS FE API */}
+	<WindowsArea className="d-flex flex-column gap-4">
+		{/* rome-ignore lint: `Widget` is provided by BOS FE API */}
 		<Widget
 			src={VoyagerBOSClientConfig.bridgeSrc}
 			props={{ path, requestHandler, ...VoyagerBOSClientConfig, ...otherProps }}
 		/>
 
-		{/* rome-ignore lint: Widget is provided in BOS FE API */}
+		{/* rome-ignore lint: `Widget` is provided by BOS FE API */}
 		<Widget
 			src={VoyagerBOSClientConfig.bridgeSrc}
 			props={{ path, requestHandler, ...VoyagerBOSClientConfig, ...otherProps }}
 		/>
-	</div>
+	</WindowsArea>
 )
 
 return VoyagerBOSClient(props)
