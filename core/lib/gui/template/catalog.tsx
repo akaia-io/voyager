@@ -1,4 +1,4 @@
-export const NavigatorTemplate = ({ ...props }) => {
+export const CatalogTemplate = ({ ...props }) => {
 	const collectionsMock = [
 		{
 			type: "collection",

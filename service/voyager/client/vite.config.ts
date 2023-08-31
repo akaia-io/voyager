@@ -7,14 +7,18 @@ import { viteStaticCopy } from "vite-plugin-static-copy"
 
 // https://vitejs.dev/config/
 export default defineConfig({
-	build: { outDir: "../../../../target/web/voyager", assetsDir: "asset", modulePreload: { polyfill: false } },
+	build: {
+		outDir: "../../../target/web/voyager",
+		assetsDir: "",
+		modulePreload: { polyfill: false },
+	},
 
 	plugins: [
 		viteStaticCopy({
 			targets: [
 				{
 					src: path.resolve(__dirname, "src/bos/main.jsx"),
-					dest: path.resolve(__dirname, "../../../../target/bos/voyager"),
+					dest: path.resolve(__dirname, "../../../target/bos/voyager"),
 				},
 			],
 
@@ -29,11 +33,13 @@ export default defineConfig({
 		chunkSplitPlugin({
 			strategy: "unbundle",
 
-			customChunk: ({ file: relPath }) => {
-				if (/\.(ts|tsx|js|jsx)$/.test(relPath)) {
-					return relPath.includes("node_modules")
-						? [".vendor", relPath.match(/node_modules\/(.*?)\/(.*?)@/).at(2)].join("/")
-						: relPath.replace(/src\//, "").replace(/\.(ts|tsx)$/, "")
+			customChunk: ({ file: modulePath }) => {
+				const croppedPath = modulePath.replace(/(\.\.\/)+/, "")
+
+				if (/\.(ts|tsx|js|jsx)$/.test(modulePath)) {
+					return croppedPath.includes("node_modules")
+						? ["core/vendor", croppedPath.match(/node_modules\/(.*?)\/(.*?)@/).at(2)].join("/")
+						: croppedPath.replace(/src\//, "").replace(/\.(ts|tsx)$/, "")
 				} else {
 					return null
 				}

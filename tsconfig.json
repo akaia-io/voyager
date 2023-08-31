@@ -24,8 +24,10 @@
 		"noFallthroughCasesInSwitch": true
 	},
 	"include": [
-		"src",
-		"vite.env.d.ts"
+		"core",
+		"entity",
+		"navigator",
+		"service"
 	],
 	"references": [
 		{

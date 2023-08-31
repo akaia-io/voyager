@@ -1,7 +1,7 @@
-import { NavigatorTemplate } from "../../../core/lib/gui/mod.ts"
+import { CatalogTemplate } from "../../../core/lib/gui/mod.ts"
 
 export const GenericView = () => (
 	<>
-		<NavigatorTemplate />
+		<CatalogTemplate />
 	</>
 )
