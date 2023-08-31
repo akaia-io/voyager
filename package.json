@@ -1,13 +1,16 @@
 {
-	"name": "akaia-voyager",
+	"name": "@akaia/webnext",
 	"private": true,
 	"version": "0.0.1",
 	"type": "module",
+	"engines": {
+		"pnpm": ">=8"
+	},
 	"scripts": {
-		"start:dev-server": "vite --host",
-		"start:viewer": " init-viewer ./target/bos",
-		"build:app": "tsc && vite build",
-		"preview": "pnpm i && pnpm build:app && concurrently 'pnpm start:viewer' 'pnpm start:dev-server'"
+		"start:voyager:client": "vite ./service/voyager/client --host",
+		"build:voyager:client": "vite build ./service/voyager/client",
+		"start:bos-viewer": "init-viewer ./service/voyager/client/src/bos",
+		"bos-preview": "pnpm i && concurrently 'pnpm start:viewer' 'pnpm start:voyager:client'"
 	},
 	"dependencies": {
 		"@iconify-json/cil": "^1.1.5",

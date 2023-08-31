@@ -7,15 +7,14 @@ import { viteStaticCopy } from "vite-plugin-static-copy"
 
 // https://vitejs.dev/config/
 export default defineConfig({
-	build: { outDir: "target/web/voyager", assetsDir: "" },
+	build: { outDir: "../../../../target/web/voyager", assetsDir: "asset", modulePreload: { polyfill: false } },
 
 	plugins: [
 		viteStaticCopy({
 			targets: [
 				{
-					src: path.resolve(__dirname, "src/service/voyager/client/bos.jsx"),
-					dest: path.resolve(__dirname, "target/bos"),
-					rename: "voyager.jsx",
+					src: path.resolve(__dirname, "src/bos/main.jsx"),
+					dest: path.resolve(__dirname, "../../../../target/bos/voyager"),
 				},
 			],
 
